@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arijit Singh Lyrics - The Voice of Soul</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        :root {
+            --primary: #8e44ad;
+            --secondary: #3498db;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --accent: #e74c3c;
+            --comment-bg: #1e2a47;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: var(--light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-bottom: 50px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        
+        .logo h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            background: linear-gradient(to right, #8e44ad, #3498db);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .search-container {
+            flex-grow: 1;
+            max-width: 600px;
+            margin: 0 30px;
+            position: relative;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: 2px solid rgba(142, 68, 173, 0.5);
+            background: rgba(44, 62, 80, 0.6);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(142, 68, 173, 0.5);
+            background: rgba(44, 62, 80, 0.8);
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: var(--primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        
+        .top-right {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .top-btn {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .top-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(142, 68, 173, 0.4);
+        }
+        
+        /* Hero Section - Moved above search */
+        .hero {
+            padding: 80px 5% 50px;
+            text-align: center;
+            background: linear-gradient(rgba(26, 26, 46, 0.7), rgba(22, 33, 62, 0.9)), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #8e44ad, #3498db);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #d1d1d1;
+        }
+        
+        /* Main Content Styles */
+        .container {
+            padding: 30px 5%;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        /* Song Grid */
+        .songs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .song-card {
+            background: rgba(26, 26, 46, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            border: 1px solid rgba(142, 68, 173, 0.3);
+        }
+        
+        .song-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            background: rgba(26, 26, 46, 0.9);
+        }
+        
+        .song-header {
+            padding: 25px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            position: relative;
+        }
+        
+        .song-title {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .song-movie {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+        }
+        
+        .song-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .song-details {
+            padding: 25px;
+            background: rgba(44, 62, 80, 0.3);
+        }
+        
+        .song-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-item i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            width: 30px;
+        }
+        
+        .info-content {
+            flex: 1;
+        }
+        
+        .info-content h4 {
+            font-size: 0.9rem;
+            color: #bbb;
+            margin-bottom: 3px;
+        }
+        
+        .info-content p {
+            font-size: 1rem;
+            color: white;
+        }
+        
+        .song-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 10px;
+        }
+        
+        .stat-item .number {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .stat-item .label {
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        
+        .view-lyrics {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .view-lyrics:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Lyrics Modal */
+        .lyrics-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lyrics-modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .lyrics-content {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(142, 68, 173, 0.5);
+            position: relative;
+            border: 2px solid var(--primary);
+        }
+        
+        .lyrics-header {
+            padding: 20px;
+            background: rgba(44, 62, 80, 0.7);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .close-btn {
+            background: var(--accent);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .close-btn:hover {
+            transform: rotate(90deg);
+        }
+        
+        .lyrics-body {
+            padding: 30px;
+            overflow-y: auto;
+            max-height: 60vh;
+        }
+        
+        .lyrics-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .lyrics-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+            white-space: pre-line;
+            margin-bottom: 30px;
+        }
+        
+        /* Comment Section */
+        .comment-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(142, 68, 173, 0.3);
+        }
+        
+        .comment-section h3 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+        
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .comment-form input,
+        .comment-form textarea {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(142, 68, 173, 0.5);
+            background: rgba(44, 62, 80, 0.6);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .comment-form textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        
+        .comment-form button {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+        
+        .comment-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(142, 68, 173, 0.4);
+        }
+        
+        .comments-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .comment {
+            background: var(--comment-bg);
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 3px solid var(--primary);
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .comment-date {
+            font-size: 0.8rem;
+            color: #bbb;
+        }
+        
+        .comment-content {
+            line-height: 1.6;
+        }
+        
+        .no-comments {
+            text-align: center;
+            padding: 20px;
+            color: #bbb;
+            font-style: italic;
+        }
+        
+        /* Contact and Donation Modals */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            width: 90%;
+            max-width: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(52, 152, 219, 0.5);
+            position: relative;
+            border: 2px solid var(--secondary);
+        }
+        
+        .modal-header {
+            padding: 20px;
+            background: rgba(44, 62, 80, 0.7);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-body {
+            padding: 25px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(142, 68, 173, 0.5);
+            background: rgba(44, 62, 80, 0.6);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .contact-form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .contact-form button {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(142, 68, 173, 0.4);
+        }
+        
+        .bank-details {
+            background: rgba(44, 62, 80, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .bank-details h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .bank-details p {
+            margin-bottom: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .bank-details i {
+            color: var(--secondary);
+            min-width: 25px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        
+        .qr-code {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .qr-code h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .qr-placeholder {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #bbb;
+            font-size: 0.9rem;
+            border: 1px dashed var(--secondary);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(26, 26, 46, 0.7);
+            margin-top: 50px;
+            border-top: 1px solid rgba(142, 68, 173, 0.3);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .songs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+            }
+            
+            .search-container {
+                width: 100%;
+                margin: 10px 0;
+            }
+            
+            .top-right {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .songs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .song-info {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(26, 26, 46, 0.5);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--primary), var(--secondary));
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section - Moved above header -->
+    <div class="hero">
+        <h2>The Voice of Soul</h2>
+        <p>Discover the magic behind Arijit Singh's most iconic songs with complete lyrics, song details, and fan comments.</p>
+    </div>
+    
+    <!-- Header with Search and Top Buttons -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-music"></i>
+                <h1>Arijit Lyrics</h1>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" class="search-box" id="searchBox" placeholder="Search Arijit Singh songs...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="top-right">
+                <button class="top-btn" id="contactBtn"><i class="fas fa-envelope"></i> Contact</button>
+                <button class="top-btn" id="donateBtn"><i class="fas fa-donate"></i> Donate</button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <div class="section-title">
+            <h2>Top Arijit Singh Songs</h2>
+        </div>
+        
+        <div class="songs-grid" id="songsGrid">
+            <!-- Song 1 -->
+            <div class="song-card" data-title="Tum Hi Ho" data-movie="Aashiqui 2" data-lyrics="Tum hi ho, tum hi ho\nTere bin ab nahi jeena\nTere bin ab nahi marna\nTum hi ho, tum hi ho\n\nTera mera rishta hai kaisa\nEk pal door gawara nahi\nTere liye har roz hai jeete\nTere liye har roz hai marte\nTum hi ho, tum hi ho...">
+                <div class="song-header">
+                    <h3 class="song-title">Tum Hi Ho</h3>
+                    <p class="song-movie">From: Aashiqui 2 (2013)</p>
+                    <div class="song-meta">
+                        <span><i class="fas fa-clock"></i> 4:22</span>
+                        <span><i class="fas fa-trophy"></i> Filmfare Award</span>
+                    </div>
+                </div>
+                <div class="song-details">
+                    <div class="song-info">
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <div class="info-content">
+                                <h4>Singer</h4>
+                                <p>Arijit Singh</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-music"></i>
+                            <div class="info-content">
+                                <h4>Music Director</h4>
+                                <p>Mithoon</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="song-stats">
+                        <div class="stat-item">
+                            <div class="number">98%</div>
+                            <div class="label">Popularity</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number">4.9</div>
+                            <div class="label">Rating</div>
+                        </div>
+                    </div>
+                    <button class="view-lyrics">
+                        <i class="fas fa-book-open"></i> View Lyrics & Comments
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Song 2 -->
+            <div class="song-card" data-title="Channa Mereya" data-movie="Ae Dil Hai Mushkil" data-lyrics="Channa mereya, channa mereya\nTere bin main reh na sakoon\nChanna mereya, channa mereya\nTujhse juda ho na sakoon\n\nTera saiyaan jhutha\nMujhpe zamaana sachha\nTere bina lagta nahi\nDil mera dhadakta nahi\nChanna mereya...">
+                <div class="song-header">
+                    <h3 class="song-title">Channa Mereya</h3>
+                    <p class="song-movie">From: Ae Dil Hai Mushkil (2016)</p>
+                    <div class="song-meta">
+                        <span><i class="fas fa-clock"></i> 4:49</span>
+                        <span><i class="fas fa-trophy"></i> Filmfare Award</span>
+                    </div>
+                </div>
+                <div class="song-details">
+                    <div class="song-info">
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <div class="info-content">
+                                <h4>Singer</h4>
+                                <p>Arijit Singh</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-music"></i>
+                            <div class="info-content">
+                                <h4>Music Director</h4>
+                                <p>Pritam</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="song-stats">
+                        <div class="stat-item">
+                            <div class="number">96%</div>
+                            <div class="label">Popularity</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number">4.8</div>
+                            <div class="label">Rating</div>
+                        </div>
+                    </div>
+                    <button class="view-lyrics">
+                        <i class="fas fa-book-open"></i> View Lyrics & Comments
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Song 3 -->
+            <div class="song-card" data-title="Kesariya" data-movie="Brahmastra" data-lyrics="Kesariya tera ishq hai piya\nRang jaaun jo main\nKesariya tera ishq hai piya\nRang jaaun jo main\n\nTu laal dupatte wali\nMain tere peeche chal diya\nTu laal dupatte wali\nMain tere peeche chal diya\nKesariya...">
+                <div class="song-header">
+                    <h3 class="song-title">Kesariya</h3>
+                    <p class="song-movie">From: Brahmastra (2022)</p>
+                    <div class="song-meta">
+                        <span><i class="fas fa-clock"></i> 4:28</span>
+                        <span><i class="fas fa-trophy"></i> IIFA Award</span>
+                    </div>
+                </div>
+                <div class="song-details">
+                    <div class="song-info">
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <div class="info-content">
+                                <h4>Singer</h4>
+                                <p>Arijit Singh</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-music"></i>
+                            <div class="info-content">
+                                <h4>Music Director</h4>
+                                <p>Pritam</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="song-stats">
+                        <div class="stat-item">
+                            <div class="number">97%</div>
+                            <div class="label">Popularity</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number">4.9</div>
+                            <div class="label">Rating</div>
+                        </div>
+                    </div>
+                    <button class="view-lyrics">
+                        <i class="fas fa-book-open"></i> View Lyrics & Comments
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Song 4 -->
+            <div class="song-card" data-title="Agar Tum Saath Ho" data-movie="Tamasha" data-lyrics="Agar tum saath ho\nAgar tum saath ho\nTeri nazron mein hai tere sapne\nTere sapnon mein hai naraazi\nMujhe lagta hai ke baatein dil ki\nHoti lafzon ki dhokhebaazi\nTum saath ho ya na ho\nKya fark hai...">
+                <div class="song-header">
+                    <h3 class="song-title">Agar Tum Saath Ho</h3>
+                    <p class="song-movie">From: Tamasha (2015)</p>
+                    <div class="song-meta">
+                        <span><i class="fas fa-clock"></i> 5:41</span>
+                        <span><i class="fas fa-trophy"></i> Filmfare Nominee</span>
+                    </div>
+                </div>
+                <div class="song-details">
+                    <div class="song-info">
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <div class="info-content">
+                                <h4>Singer</h4>
+                                <p>Arijit Singh & Alka Yagnik</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-music"></i>
+                            <div class="info-content">
+                                <h4>Music Director</h4>
+                                <p>A.R. Rahman</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="song-stats">
+                        <div class="stat-item">
+                            <div class="number">95%</div>
+                            <div class="label">Popularity</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number">4.8</div>
+                            <div class="label">Rating</div>
+                        </div>
+                    </div>
+                    <button class="view-lyrics">
+                        <i class="fas fa-book-open"></i> View Lyrics & Comments
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Song 5 -->
+            <div class="song-card" data-title="Gerua" data-movie="Dilwale" data-lyrics="Rang de tu mohe gerua\nRang de tu mohe gerua\nKyun teri itni si chahaton mein\nMain kho gaya\nTere bina ab rahe na jaaun\nKya karun haaye...">
+                <div class="song-header">
+                    <h3 class="song-title">Gerua</h3>
+                    <p class="song-movie">From: Dilwale (2015)</p>
+                    <div class="song-meta">
+                        <span><i class="fas fa-clock"></i> 5:45</span>
+                        <span><i class="fas fa-trophy"></i> IIFA Nominee</span>
+                    </div>
+                </div>
+                <div class="song-details">
+                    <div class="song-info">
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <div class="info-content">
+                                <h4>Singer</h4>
+                                <p>Arijit Singh & Antara Mitra</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-music"></i>
+                            <div class="info-content">
+                                <h4>Music Director</h4>
+                                <p>Pritam</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="song-stats">
+                        <div class="stat-item">
+                            <div class="number">94%</div>
+                            <div class="label">Popularity</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number">4.7</div>
+                            <div class="label">Rating</div>
+                        </div>
+                    </div>
+                    <button class="view-lyrics">
+                        <i class="fas fa-book-open"></i> View Lyrics & Comments
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Song 6 -->
+            <div class="song-card" data-title="Phir Le Aaya Dil" data-movie="Barfi!" data-lyrics="Phir le aaya dil\nMajboor kiya tune\nMujhko bhi yaad kiya tune\nPhir le aaya dil...\n\nKaise bhulayein tujhe hum\nTu to hai har saans mein\nChaahe jitna bhula le\nTu to hai har khwaab mein...">
+                <div class="song-header">
+                    <h3 class="song-title">Phir Le Aaya Dil</h3>
+                    <p class="song-movie">From: Barfi! (2012)</p>
+                    <div class="song-meta">
+                        <span><i class="fas fa-clock"></i> 4:54</span>
+                        <span><i class="fas fa-trophy"></i> Filmfare Award</span>
+                    </div>
+                </div>
+                <div class="song-details">
+                    <div class="song-info">
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <div class="info-content">
+                                <h4>Singer</h4>
+                                <p>Arijit Singh</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-music"></i>
+                            <div class="info-content">
+                                <h4>Music Director</h4>
+                                <p>Pritam</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="song-stats">
+                        <div class="stat-item">
+                            <div class="number">93%</div>
+                            <div class="label">Popularity</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number">4.7</div>
+                            <div class="label">Rating</div>
+                        </div>
+                    </div>
+                    <button class="view-lyrics">
+                        <i class="fas fa-book-open"></i> View Lyrics & Comments
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Lyrics Modal with Comments -->
+    <div class="lyrics-modal" id="lyricsModal">
+        <div class="lyrics-content">
+            <div class="lyrics-header">
+                <h3>Song Lyrics & Comments</h3>
+                <div class="close-btn" id="closeLyrics">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="lyrics-body">
+                <h2 class="lyrics-title" id="lyricsTitle">Song Title</h2>
+                <div class="lyrics-text" id="lyricsText">
+                    <!-- Lyrics will be displayed here -->
+                </div>
+                
+                <div class="comment-section">
+                    <h3><i class="fas fa-comments"></i> Fan Comments</h3>
+                    <form class="comment-form" id="commentForm">
+                        <input type="text" id="commentName" placeholder="Your Name" required>
+                        <textarea id="commentText" placeholder="Share your thoughts about this song..." required></textarea>
+                        <button type="submit"><i class="fas fa-paper-plane"></i> Post Comment</button>
+                    </form>
+                    <div class="comments-container" id="commentsContainer">
+                        <!-- Comments will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Us</h3>
+                <div class="close-btn" id="closeContact">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Donation Modal -->
+    <div class="modal" id="donationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Support Arijit Lyrics</h3>
+                <div class="close-btn" id="closeDonation">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="bank-details">
+                    <h3>Bank Transfer Details</h3>
+                    <p><i class="fas fa-university"></i> <span>Bank: State Bank of India</span></p>
+                    <p><i class="fas fa-user"></i> <span>Account Name: Arijit Lyrics Foundation</span></p>
+                    <p><i class="fas fa-credit-card"></i> <span>Account Number: 1234 5678 9012 3456</span></p>
+                    <p><i class="fas fa-code"></i> <span>IFSC Code: SBIN0000123</span></p>
+                </div>
+                
+                <div class="qr-code">
+                    <h3>Scan QR Code to Donate</h3>
+                    <div class="qr-placeholder">
+                        <div>UPI QR Code<br>(Scan with any UPI app)</div>
+                    </div>
+                </div>
+                
+                <p style="text-align: center; margin-top: 20px; color: #bbb;">
+                    Your support helps us maintain this platform and bring you more amazing lyrics!
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>© 2023 Arijit Lyrics | Made with ❤️ for Arijit Singh Fans | "Music is the divine way to tell beautiful, poetic things to the heart."</p>
+    </footer>
+<!-- This Script work for all lyrics old and new -->
+    <script>
+        // DOM Elements
+        const songsGrid = document.getElementById('songsGrid');
+        const searchBox = document.getElementById('searchBox');
+        const lyricsModal = document.getElementById('lyricsModal');
+        const lyricsTitle = document.getElementById('lyricsTitle');
+        const lyricsText = document.getElementById('lyricsText');
+        const contactModal = document.getElementById('contactModal');
+        const donationModal = document.getElementById('donationModal');
+        const contactBtn = document.getElementById('contactBtn');
+        const donateBtn = document.getElementById('donateBtn');
+        const closeLyrics = document.getElementById('closeLyrics');
+        const closeContact = document.getElementById('closeContact');
+        const closeDonation = document.getElementById('closeDonation');
+        const commentForm = document.getElementById('commentForm');
+        const commentsContainer = document.getElementById('commentsContainer');
+        const commentName = document.getElementById('commentName');
+        const commentText = document.getElementById('commentText');
+
+        // Current song for comments
+        let currentSongTitle = null;
+
+        // Initialize event listeners
+        function initEvents() {
+            // Attach event listeners to all view-lyrics buttons
+            document.querySelectorAll('.view-lyrics').forEach(button => {
+                button.addEventListener('click', function() {
+                    const card = this.closest('.song-card');
+                    const title = card.querySelector('.song-title').textContent;
+                    const movie = card.querySelector('.song-movie').textContent;
+                    const lyrics = card.dataset.lyrics;
+                    
+                    showLyrics(title, movie, lyrics);
+                });
+            });
+        }
+
+        // Show lyrics modal
+        function showLyrics(title, movie, lyrics) {
+            currentSongTitle = title;
+            lyricsTitle.textContent = `${title} - ${movie}`;
+            lyricsText.textContent = lyrics;
+            lyricsModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Load comments for this song
+            loadComments(title);
+        }
+
+        // Load comments for a song
+        function loadComments(songTitle) {
+            commentsContainer.innerHTML = '';
+            const comments = getComments(songTitle);
+            
+            if (comments.length === 0) {
+                commentsContainer.innerHTML = '<div class="no-comments">No comments yet. Be the first to share your thoughts!</div>';
+                return;
+            }
+            
+            comments.forEach(comment => {
+                const commentEl = document.createElement('div');
+                commentEl.className = 'comment';
+                commentEl.innerHTML = `
+                    <div class="comment-header">
+                        <span class="comment-author">${comment.name}</span>
+                        <span class="comment-date">${formatDate(comment.date)}</span>
+                    </div>
+                    <div class="comment-content">${comment.text}</div>
+                `;
+                commentsContainer.appendChild(commentEl);
+            });
+        }
+
+        // Get comments from localStorage
+        function getComments(songTitle) {
+            const comments = JSON.parse(localStorage.getItem(`song_${songTitle}_comments`) || '[]');
+            return comments.sort((a, b) => new Date(b.date) - new Date(a.date));
+        }
+
+        // Save comment to localStorage
+        function saveComment(songTitle, name, text) {
+            const comments = getComments(songTitle);
+            const newComment = {
+                name,
+                text,
+                date: new Date().toISOString()
+            };
+            comments.unshift(newComment);
+            localStorage.setItem(`song_${songTitle}_comments`, JSON.stringify(comments));
+            return newComment;
+        }
+
+        // Format date for display
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        // Close modals
+        function closeAllModals() {
+            lyricsModal.classList.remove('active');
+            contactModal.classList.remove('active');
+            donationModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Search functionality
+        function searchSongs() {
+            const searchTerm = searchBox.value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.song-card');
+            
+            if (searchTerm === '') {
+                cards.forEach(card => card.style.display = 'block');
+                return;
+            }
+            
+            cards.forEach(card => {
+                const title = card.dataset.title.toLowerCase();
+                const lyrics = card.dataset.lyrics.toLowerCase();
+                
+                if (title.includes(searchTerm) || lyrics.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Event Listeners
+        contactBtn.addEventListener('click', () => {
+            contactModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        donateBtn.addEventListener('click', () => {
+            donationModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeLyrics.addEventListener('click', closeAllModals);
+        closeContact.addEventListener('click', closeAllModals);
+        closeDonation.addEventListener('click', closeAllModals);
+        
+        // Close modal when clicking outside
+        [lyricsModal, contactModal, donationModal].forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeAllModals();
+            });
+        });
+        
+        // Search functionality
+        searchBox.addEventListener('input', searchSongs);
+        
+        // Submit contact form
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+            closeAllModals();
+        });
+        
+        // Submit comment form
+        commentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!currentSongTitle) return;
+            
+            const name = commentName.value.trim();
+            const text = commentText.value.trim();
+            
+            if (!name || !text) {
+                alert('Please fill in both fields');
+                return;
+            }
+            
+            // Save the comment
+            saveComment(currentSongTitle, name, text);
+            
+            // Reload comments
+            loadComments(currentSongTitle);
+            
+            // Reset form
+            commentName.value = '';
+            commentText.value = '';
+            
+            // Scroll to the new comment
+            commentsContainer.scrollTop = 0;
+        });
+        
+        // Initialize the page
+        window.addEventListener('DOMContentLoaded', initEvents);
+    </script>
+</body>
+</html>
